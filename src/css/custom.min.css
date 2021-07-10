@@ -1,0 +1,9 @@
+.card {
+    border-top: 2px solid #ec6139;
+}
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    background-color: #ec6139;
+}
+.is-danger .header {
+    background-color: #ea4e22;
+}
