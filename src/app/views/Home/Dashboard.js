@@ -2,8 +2,8 @@ import React from 'react'
 import Tabs from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab'
 
-import { default as OdtListado } from '../Odts/Listado'
-import { default as ProyectoListado } from '../Proyectos/Listado'
+import OdtListado from '../../components/Odts/Listado'
+import ProyectoListado from '../../components/Proyectos/Listado'
 
 const Dashboard = () => {
     return (
@@ -17,7 +17,7 @@ const Dashboard = () => {
                     <div className="card-body">
                         <Tabs
                             defaultActiveKey="activas"
-                            variant="pills"
+                            variant="tabs"
                             id="odts"
                             className="mb-3"
                         >

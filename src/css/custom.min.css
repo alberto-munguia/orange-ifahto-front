@@ -1,9 +1,1 @@
-.card {
-    border-top: 2px solid #ec6139;
-}
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-    background-color: #ec6139;
-}
-.is-danger .header {
-    background-color: #ea4e22;
-}
+.menu-link{text-decoration:none}.menu-link.active{background-color:#ea4e22}.sidebar-header{background-color:#242a33}.bg-orange,.sidebar .menu>.menu-item:hover>.menu-link{background-color:#ea4e22}.sidebar-navigation.nav{display:block}.sidebar .menu-submenu .menu-item.active>.menu-link .dot::after,.sidebar .menu-submenu .menu-item:hover>.menu-link .dot::after{background-color:#ea4e22;border-color:#ea4e22}.form-control:focus{border-color:#86b7fe;box-shadow:0 0 0 .1rem rgba(13,110,253,.15)}.bg-orange{color:#fff}.btn-outline.btn-orange{color:#ea4e22;background-color:transparent;border-color:#ea4e22}.btn-orange,.btn-outline.btn-orange:hover{background-color:#ea4e22;color:#fff}.btn-orange{border-color:#ea4e22}.btn-orange:hover{background-color:#ec6139;border-color:#ec6139;color:#fff}.text-orange{color:#ea4e22!important}.small a:hover,a,small a:hover,time a:hover{color:#ea4e22}.nav:not(.nav-tabs) .nav-link *{margin:0}.nav:not(.nav-tabs) .nav-link :first-child{margin:8px}.nav:not(.nav-tabs) .nav-link :not(.badge){flex-grow:0}.table-custom{table-layout:auto!important}label.is-invalid{width:100%;margin-top:.25rem;color:#f96868;font-size:13px}.form-type-material .form-control,.form-type-material.form-control{background-image:linear-gradient(#ea4e22,#ea4e22),linear-gradient(#ebebeb,#ebebeb)}.custom-checkbox .custom-control-label::after{top:0!important}.swal-title{color:#313944;font-family:Roboto,sans-serif;font-size:22px;font-weight:400;letter-spacing:.5px}.swal-footer{text-align:center!important}.card{border-top:2px solid #ec6139}.nav-pills .nav-link.active,.nav-pills .show>.nav-link{background-color:#ec6139;color:#fff}.nav-tabs .nav-link.active,.nav-tabs .nav-link.active:focus,.nav-tabs .nav-link.active:hover,.nav-tabs .nav-link:hover{border-color:#ec6139}.is-danger .header{background-color:#ea4e22}.page-item.active .page-link,.page-item.active .page-link:hover{background-color:#ec6139;border-color:#ec6139}

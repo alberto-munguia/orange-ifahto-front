@@ -2,8 +2,8 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import { Col, Image, Row } from 'react-bootstrap'
 
-import SignIn from '../../components/Auth/SignIn'
-import ForgotPassword from '../../components/Auth/ForgotPassword'
+import SignIn from '../Auth/SignIn'
+import ForgotPassword from '../Auth/ForgotPassword'
 
 const Auth = () => {
     return (

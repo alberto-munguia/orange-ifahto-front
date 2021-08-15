@@ -38,7 +38,8 @@ const Listado = () => {
                 overlay={ overlayFactory() }
                 bootstrap4
                 hover
-                wrapperClasses="table-responsive m-b-15"
+                classes="table-custom"
+                wrapperClasses="table-responsive mb-15"
             />
         </>
     )

@@ -1,45 +1,58 @@
 import React from 'react'
-import Image from 'react-bootstrap/Image'
+import { Link, useHistory } from 'react-router-dom'
+import { Button, Dropdown, Image, Navbar } from 'react-bootstrap'
 
 const Header = () => {
+    let history = useHistory()
+
+    const handleGoBack = () => history.goBack()
+
     return (
-        <div className="header">
-            <div className="logo logo-dark">
-                <a href="index.html" style={{ marginTop: '5%' }}>
-                    <Image src="/assets/img/logo-ifahto-blanco.svg" alt="Ifahto" fluid />
-                    <Image
-                        src="/assets/img/logo-if.svg"
-                        alt="Ifahto"
-                        style={{ width: '50px' }}
-                        className="logo-fold mx-auto"
-                        fluid
-                        
-                    />
-                </a>
-            </div>
-            <div className="logo logo-white">
-                <a href="index.html" style={{ marginTop: '5%' }}>
-                    <Image src="/assets/img/logo-ifahto-blanco.svg" alt="Ifahto" fluid />
-                    <Image
-                        src="/assets/img/logo-if.svg"
-                        alt="Ifahto"
-                        style={{ width: '50px' }}
-                        className="logo-fold mx-auto"
-                        fluid
-                        
-                    />
-                </a>
-            </div>
-            <div className="nav-wrap">
-                <ul className="nav-left"></ul>
-                <ul className="nav-right">
-                    <li className="dropdown dropdown-animated scale-left">
-                        <div className="pointer"></div>
-                        <div className="p-b-15 p-t-20 dropdown-menu pop-profile"></div>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <>
+            <header className="topbar topbar-inverse bg-orange">
+                <div className="topbar-left">
+                    <Navbar.Toggle
+                        aria-controls="navbar-nav"
+                        as="span"
+                        className="topbar-btn sidebar-toggler"
+                    ><i>&#9776;</i></Navbar.Toggle>
+                    {/* <span className="topbar-btn sidebar-toggler"><i>&#9776;</i></span> */}
+                    <h3 className="text-white"><strong></strong></h3>
+
+                    <Button variant="dark" size="sm" onClick={ handleGoBack }>
+                        <i className="fas fa-arrow-left"></i> Regresar
+                    </Button>
+                </div>
+
+                <div className="topbar-right">
+                    <div className="topbar-divider"></div>
+                    <ul className="topbar-btns">
+                        <Dropdown as="li">
+                            <Dropdown.Toggle as="span" className="topbar-btn">
+                                <Image className="avatar" src="/assets/img/avatar.jpg" />
+                            </Dropdown.Toggle>
+
+                            <Dropdown.Menu className="dropdown-menu-right">
+                                {/* <Dropdown.Divider></Dropdown.Divider> */}
+                                <Dropdown.Item>
+                                    <Link to="/logout">
+                                        <i className="fa fa-sign-out" /> Cerrar Sesión
+                                    </Link>
+                                </Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
+
+                        <Dropdown as="li" className="d-none d-md-block">
+                            <div className="center-v">
+                                <span className="fs-14 text-uppercase text-white">
+                                    <strong>Alberto Munguia</strong>
+                                </span>
+                            </div>
+                        </Dropdown>
+                    </ul>
+                </div>
+            </header>
+        </>
     )
 }
 

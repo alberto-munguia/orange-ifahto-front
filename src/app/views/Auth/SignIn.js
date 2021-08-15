@@ -2,19 +2,15 @@ import React, { useEffect } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { Form, Button } from 'react-bootstrap'
 import { Formik } from 'formik'
-import * as yup from 'yup'
+import yup from '../../../plugins/yup'
 import axios from '../../../plugins/axios'
 
-import { InputEffect } from '../helpers/FormMaterial'
+import { InputEffect } from '../../helpers/FormMaterial'
 
 const SignIn = () => {
     useEffect(() => {
-        InputEffect()
+        // InputEffect()
     }, [])
-
-    yup.setLocale({
-        mixed: { required: 'Este campo es requerido' }
-    })
 
     let history = useHistory()
 
@@ -44,8 +40,8 @@ const SignIn = () => {
                 className="card card-shadowed px-50 py-30 w-400px mx-auto"
                 style={{ maxWidth: '100%', borderTop: '0' }}
             >
-                <h5 className="text-uppercase">Iniciar Sesión</h5>
-                <br />
+                <h5 className="text-uppercase mb-3">Iniciar Sesión</h5>
+                <br className="clearfix" />
 
                 <Formik
                     validationSchema={ schema }
@@ -55,37 +51,47 @@ const SignIn = () => {
                     {({
                         values,
                         errors,
+                        handleBlur,
                         handleChange,
                         handleSubmit,
-                        isSubmitting
+                        isSubmitting,
+                        touched,
                     }) => (
-                        <Form className="form-type-material" noValidate onSubmit={ handleSubmit }>
+                        <Form noValidate onSubmit={ handleSubmit }>
                             {/* nickname */}
-                            <Form.Group controlId="nickname">
+                            <Form.Group controlId="nickname" className="form-floating mb-3">
                                 <Form.Control
                                     type="text"
                                     name="nickname"
                                     value={ values.nickname }
+                                    onBlur={ handleBlur }
                                     onChange={ handleChange }
-                                    isInvalid={ !!errors.nickname }
+                                   isValid={ touched.nickname && !errors.nickname }
+                                    isInvalid={ touched.nickname && !!errors.nickname }
+                                    placeholder="Usuario"
                                 />
-                                <Form.Label>Usuario</Form.Label>
-                                <Form.Control.Feedback type="invalid" style={{ display: 'block' }}>
+                                <Form.Label>Usuario <span className="text-danger">*</span></Form.Label>
+                                <Form.Control.Feedback type="invalid">
                                     { errors.nickname }
                                 </Form.Control.Feedback>
                             </Form.Group>
 
                             {/* password */}
-                            <Form.Group controlId="password">
-                                <Form.Label>Contraseña</Form.Label>
+                            <Form.Group controlId="password" className="form-floating mb-3">
                                 <Form.Control
                                     type="password"
                                     name="password"
                                     value={ values.password }
+                                    onBlur={ handleBlur }
                                     onChange={ handleChange }
-                                    isInvalid={ !!errors.password }
+                                    isValid={ touched.password && !errors.password }
+                                    isInvalid={ touched.password && !!errors.password }
+                                    placeholder="Contraseña"
                                 />
-                                <Form.Control.Feedback type="invalid" style={{ display: 'block' }}>
+                                <Form.Label>
+                                    Contraseña <span className="text-danger">*</span>
+                                </Form.Label>
+                                <Form.Control.Feedback type="invalid">
                                     { errors.password }
                                 </Form.Control.Feedback>
                             </Form.Group>
@@ -97,13 +103,12 @@ const SignIn = () => {
                                 </span>
                             </Form.Group>
 
-                            <Form.Group>
+                            <Form.Group className="mt-3 d-grid">
                                 <Button
                                     variant="danger"
                                     type="submit"
                                     className="btn-outline btn-bold"
                                     disabled={ isSubmitting }
-                                    block
                                 >
                                     <i className="fas fa-sign-in-alt"></i>{' '}
                                     Ingresar
